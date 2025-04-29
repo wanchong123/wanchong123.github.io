@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="H3C交换机常用配置命令大全一.用户配置: system-view [H3C]super password H3C   设置用户分级密码 [H3C]undo super password   删除用户分级密码 [H3C]localuser bigheap 123456 1   Web网管用户设置,1（缺省）为管理级用户,缺省admin,admin [H3C]undo localuser bighe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H3C交换机常用配置命令大全">
+<meta property="og:url" content="http://example.com/2025/04/29/H3C%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/index.html">
+<meta property="og:site_name" content="万重">
+<meta property="og:description" content="H3C交换机常用配置命令大全一.用户配置: system-view [H3C]super password H3C   设置用户分级密码 [H3C]undo super password   删除用户分级密码 [H3C]localuser bigheap 123456 1   Web网管用户设置,1（缺省）为管理级用户,缺省admin,admin [H3C]undo localuser bighe">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-29T10:22:58.486Z">
+<meta property="article:modified_time" content="2025-04-29T10:25:49.327Z">
+<meta property="article:author" content="wanchong123">
+<meta name="twitter:card" content="summary">
+
+
+<title >H3C交换机常用配置命令大全</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.2.5' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.2.5' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"wanchong123","root":"/","typed_text":null,"theme_version":"2.2.5","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)Hey! Good again!","hide_text":"(●—●)Oh, crash!"},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms","author":"Post author: ","copyright_link":"Post link: ","copyright_license_title":"Copyright Notice: ","copyright_license_content":"All articles in this blog are licensed under undefined unless otherwise stated.","copy_success":"Copied","copy_failure":"Copy failed","open_read_mode":"Enter reading mode","exit_read_mode":"Exit reading mode","notice_outdate_message":"It has been undefined days since the last update, the content of the article may be outdated.","sticky":"TOP","just":"Just","min":"minutes ago","hour":"hours ago","day":"days ago","month":"months ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"The blog has been lovely to run undefined day"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-04-29 18:25:49"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.5" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            万<span>重</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    Home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    Archives
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            H3C交换机常用配置命令大全
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2025
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        万重
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                Residence:
+            </div>
+            <div class="trm-label trm-label-light">
+                Mars
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:15131625932@163.com" class="trm-btn">
+            Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            04/29
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            18:22
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            wanchong123
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="H3C交换机常用配置命令大全"><a href="#H3C交换机常用配置命令大全" class="headerlink" title="H3C交换机常用配置命令大全"></a>H3C交换机常用配置命令大全</h1><p><em>一.用户配置:</em></p>
+<p><H3C>system-view</p>
+<p>[H3C]super password H3C   设置用户分级密码</p>
+<p>[H3C]undo super password   删除用户分级密码</p>
+<p>[H3C]localuser bigheap 123456 1   Web网管用户设置,1（缺省）为管理级用户,缺省admin,admin</p>
+<p>[H3C]undo localuser bigheap   删除Web网管用户</p>
+<p>[H3C]user-interface aux 0   只支持0</p>
+<p>[H3C-Aux]idle-timeout 2 50   设置超时为2分50秒,若为0则表示不超时,默认为5分钟</p>
+<p>[H3C-Aux]undo idle-timeout   恢复默认值</p>
+<p>[H3C]user-interface vty 0   只支持0和1</p>
+<p>[H3C-vty]idle-timeout 2 50   设置超时为2分50秒,若为0则表示不超时,默认为5分钟</p>
+<p>[H3C-vty]undo idle-timeout   恢复默认值</p>
+<p>[H3C-vty]set authentication password 123456   设置telnet密码,必须设置</p>
+<p>[H3C-vty]undo set authentication password   取消密码</p>
+<p>[H3C]display users   显示用户</p>
+<p>[H3C]display user-interface   显示用户界面状态</p>
+<p><em><strong>*二.系统IP配置:*</strong></em></p>
+<p>[H3C]vlan 20</p>
+<p>[H3C]management-vlan 20</p>
+<p>[H3C]interface vlan-interface 20   创建并进入管理VLAN</p>
+<p>[H3C]undo interface vlan-interface 20   删除管理VLAN接口</p>
+<p>[H3C-Vlan-interface20]ip address 192.168.1.2 255.255.255.0   配置管理VLAN接口静态IP地址(缺省为192.168.0.234)</p>
+<p>[H3C-Vlan-interface20]undo ip address   删除IP地址</p>
+<p>[H3C-Vlan-interface20]ip gateway 192.168.1.1   指定缺省网关(默认无网关地址)</p>
+<p>[H3C-Vlan-interface20]undo ip gateway</p>
+<p>[H3C-Vlan-interface20]shutdown   关闭接口</p>
+<p>[H3C-Vlan-interface20]undo shutdown   开启</p>
+<p>[H3C]display ip   显示管理VLAN接口IP的相关信息</p>
+<p>[H3C]display interface vlan-interface 20   查看管理VLAN的接口信息</p>
+<p><H3C>debugging ip   开启IP调试功能</p>
+<p><H3C>undo debugging ip</p>
+<p><em><strong>*三.DHCP客户端配置:*</strong></em></p>
+<p>[H3C-Vlan-interface20]ip address dhcp-alloc   管理VLAN接口通过DHCP方式获取IP地址</p>
+<p>[H3C-Vlan-interface20]undo ip address dhcp-alloc   取消</p>
+<p>[H3C]display dhcp   显示DHCP客户信息</p>
+<p><H3C>debugging dhcp-alloc   开启DHCP调试功能</p>
+<p><H3C>undo debugging dhcp-alloc</p>
+<p><em><strong>*四.端口配置:*</strong></em></p>
+<p>[H3C]interface Ethernet0&#x2F;3</p>
+<p>[H3C-Ethernet0&#x2F;3]shutdown</p>
+<p>[H3C-Ethernet0&#x2F;3]speed 100   速率,可为10,100,1000和auto(缺省)</p>
+<p>[H3C-Ethernet0&#x2F;3]duplex full   双工,可为half,full和auto(缺省) 光口和汇聚后不能配置</p>
+<p>[H3C-Ethernet0&#x2F;3]flow-control   开启流控,默认为关闭</p>
+<p>[H3C-Ethernet0&#x2F;3]broadcast-suppression 20   设置抑制广播百分比为20%,可取5,10,20,100,缺省为100,同时组播和未知单播也受此影响</p>
+<p>[H3C-Ethernet0&#x2F;3]loopback internal   内环测试</p>
+<p>[H3C-Ethernet0&#x2F;3]loopback external   外环测试,需插接自环头,必须为全双工或者自协商模式</p>
+<p>[H3C-Ethernet0&#x2F;3]port link-type trunk   设置链路的类型为trunk,可为access(缺省),trunk</p>
+<p>[H3C-Ethernet0&#x2F;3]port trunk pvid vlan 20   设置20为该trunk的缺省VLAN,默认为1</p>
+<p>​                      (trunk线路两端的PVID必须一致)</p>
+<p>[H3C-Ethernet0&#x2F;3]port access vlan 20   将当前access端口加入指定的VLAN</p>
+<p>[H3C-Ethernet0&#x2F;3]port trunk permit vlan all   允许所有的VLAN通过当前的trunk端口,可多次使用该命令</p>
+<p>[H3C-Ethernet0&#x2F;3]mdi auto   设置以太端口为自动监测,normal(缺省)为直通线,across为交叉线              </p>
+<p>[H3C]link-aggregation Ethernet 0&#x2F;1 to Ethernet 0&#x2F;4   将1-4口加入汇聚组,1为主端口,两端需要同时配置,设置了端口镜像以及端口隔离的端口无法汇聚</p>
+<p>[H3C]undo link-aggregation Ethernet 0&#x2F;1   删除该汇聚组</p>
+<p>[H3C]link-aggregation mode egress   配置端口汇聚模式为根据目的MAC地址进行负荷分担,可选为                   ingress,egress和both,缺省为both</p>
+<p>[H3C]monitor-port Ethernet 0&#x2F;2   将该端口设置为镜像端口,必须先设置镜像端口,删除时必须先删除被镜像端口,而且它们不能同在一个端口,该端口不能在汇聚组中,设置新镜像端口时,新取代旧,被镜像不变</p>
+<p>[H3C]mirroring-port Ethernet 0&#x2F;3 to Ethernet 0&#x2F;4 both   将端口3和4设置为被镜像端口,both为同时监控接收和发送的报文,inbound表示仅监控接收的报文,outbound表示仅监控发送的报文</p>
+<p>[H3C]display mirror</p>
+<p>[H3C]display interface Ethernet 0&#x2F;3</p>
+<p><H3C>reset counters   清除所有端口的统计信息</p>
+<p>[H3C]display link-aggregation Ethernet 0&#x2F;3   显示端口汇聚信息</p>
+<p>[H3C-Ethernet0&#x2F;3]virtual-cable-test   诊断该端口的电路状况</p>
+<p><em><strong>*五.VLAN配置:*</strong></em></p>
+<p>[H3C]vlan 2</p>
+<p>[H3C]undo vlan all   删除除缺省VLAN外的所有VLAN,缺省VLAN不能被删除</p>
+<p>[H3C-vlan2]port Ethernet 0&#x2F;4 to Ethernet 0&#x2F;7   将4到7号端口加入到VLAN2中,此命令只能用来加access端口,不能用来增加trunk或者hybrid端口</p>
+<p>[H3C-vlan2]port-isolate enable   打开VLAN内端口隔离特性,不能二层转发,默认不启用该功能</p>
+<p>[H3C-Ethernet0&#x2F;4]port-isolate uplink-port vlan 2   设置4为VLAN2的隔离上行端口,用于转发二层数据,只能配置一个上行端口,若为trunk,则建议允许所有VLAN通过,隔离不能与汇聚同时配置</p>
+<p>[H3C]display vlan all   显示所有VLAN的详细信息</p>
+<p> S1550E支持基于端口的VLAN,通过创建不同的user-group来实现,一个端口可以属于多个user-group,不属于同一个user-group的端口不能互相通信,最多支持50个user-group</p>
+<p>[H3C]user-group 20   创建user-group 20,默认只存在user-group 1</p>
+<p>[H3C-UserGroup20]port Ethernet 0&#x2F;4 to Ethernet 0&#x2F;7   将4到7号端口加入到VLAN20中,初始时都属于user-group 1中</p>
+<p>[H3C]display user-group 20   显示user-group 20的相关信息</p>
+<p><em><strong>*六.集群配置:*</strong></em></p>
+<p> S2100只能作为成员交换机加入集群中,加入后系统名改为”集群名_成员编号.原系统名”的格式.</p>
+<p> 即插即用功能通过两个功能实现: 集群管理协议MAC组播地址协商和管理VLAN协商</p>
+<p>[H3C]cluster enable  启用群集功能,缺省为启用</p>
+<p>[H3C]cluster   进入群集视图</p>
+<p>[H3C-cluster]administrator-address H-H-H name switch   H-H-H为命令交换机的MAC,加入switch集群</p>
+<p>[switch_1.H3C-cluster]undo administrator-address   退出集群</p>
+<p>[H3C]display cluster   显示集群信息</p>
+<p>[H3C]management-vlan 2   集群报文只能在管理VLAN中转发,同一集群需在同一个管理VLAN中,需在建立集群之前指定管理VLAN</p>
+<p><H3C>debugging cluster</p>
+<p><em><strong>*七.QoS配置:*</strong></em></p>
+<p> QoS配置步骤:设置端口的优先级,设置交换机信任报文的优先级方式,队列调度,端口限速</p>
+<p>[H3C-Ethernet0&#x2F;3]priority 7   设置端口优先级为7,默认为0</p>
+<p>[H3C]priority-trust cos   设置交换机信任报文的优先级方式为cos(802.1p优先级,缺省值),还可以设为dscp方式(dscp优先级方式)</p>
+<p>[H3C]queue-scheduler hq-wrr 2 4 6 8   设置队列调度算法为HQ-WRR(默认为WRR),权重为2,4,6,8</p>
+<p>[H3C-Ethernet0&#x2F;3]line-rate inbound 29   将端口进口速率限制为2Mbps,取1-28时,速率为rate<em>8</em>1024&#x2F;125,即64,128,192…1.792M;29-127时,速率为(rate-27)*1024,即2M,3M,4M…100M,千兆时可继续往下取,128-240时,速率为(rate-115)<em>8</em>1024,即104M,112M,120M…1000M</p>
+<p>[H3C]display queue-scheduler   显示队列调度模式及参数</p>
+<p>[H3C]display priority-trust   显示优先级信任模式</p>
+<p><em><strong>*八.系统管理:*</strong></em></p>
+<p>[H3C]mac-address blackhole H-H-H vlan 1   在VLAN1中添加黑洞MAC</p>
+<p>[H3C]mac-address static H-H-H interface Ethernet 0&#x2F;1 vlan 1   在VLAN1中添加端口一的一个mac</p>
+<p>[H3C]mac-address timer aging 500   设置MAC地址表的老化时间为500s</p>
+<p>[H3C]display mac-address</p>
+<p>[H3C]display arp</p>
+<p>[H3C]mac-address port-binding H-H-H interface Ethernet 0&#x2F;1 vlan 1   配置端口邦定</p>
+<p>[H3C]display mac-address port-binding</p>
+<p>[H3C]display saved-configuration</p>
+<p>[H3C]display current-configuration</p>
+<p><H3C>save</p>
+<p>[H3C]restore default   恢复交换机出厂默认配置,恢复后需重启才能生效</p>
+<p>[H3C]display version</p>
+<p><H3C>reboot</p>
+<p>[H3C]display device</p>
+<p>[H3C]sysname bigheap</p>
+<p>[H3C]info-center enable   启用系统日志功能,缺省情况下启用</p>
+<p>[H3C]info-center loghost ip 192.168.0.3   向指定日志主机(只能为UNIX或LINUX,不能为Windows)输出信息,需先开启日志功能,缺省关闭</p>
+<p>[H3C]info-center loghost level 8   设置系统日志级别为8,默认为5.级别说明:1.emergencies 2.alerts 3.critical 4.errors 5.warnings 6.notifications 7.informational 8.debugging</p>
+<p><H3C>terminal debugging   启用控制台对调试信息的显示,缺省控制台为禁用</p>
+<p><H3C>terminal logging   启用控制台对日志信息的显示,缺省控制台为启用</p>
+<p><H3C>terminal trapping   启用控制台对告警信息的显示,缺省控制台为启用</p>
+<p>[H3C]display info-center   显示系统日志的配置和缓冲区记录的信息</p>
+<p>[H3C]display logbuffer   显示日志缓冲区最近记录的指定数目的日志信息</p>
+<p>[H3C]display trapbuffer   显示告警缓冲区最近记录的指定数目的日志信息</p>
+<p><H3C>reset logbuffer   清除日志缓冲区的信息</p>
+<p><H3C>reset trapbuffer   清除告警缓冲区的信息</p>
+<p><em><strong>*九.网络协议配置:*</strong></em></p>
+<p> NDP即是邻居发现协议,S1550E只能开启或关闭NDP,无法配置,默认有效保留时间为180s,NDP报文发送的间隔60s</p>
+<p>[H3C]ndp enable   缺省情况下是开启的</p>
+<p>[H3C-Ethernet0&#x2F;3]ndp enable   缺省情况下开启</p>
+<p>[H3C]display ndp   显示NDP配置信息</p>
+<p>[H3C]display ndp interface Ethernet 0&#x2F;1   显示指定端口NDP发现的邻居信息</p>
+<p><H3C>debugging ndp interface Ethernet 0&#x2F;1</p>
+<p> HABP协议即Huawei Authentication Bypass Protocol,华为鉴权旁路协议,是用来解决当交换机上同时配置了802.1x和HGMPv1&#x2F;v2时,未经授权和认证的端口上将过滤HGMP报文,从而使管理设备无法管理下挂的交换机的问题。交换机启动HABP后,将忽略802.1x认证。</p>
+<p> HABP包括服务器和客户端,由服务器定期发送请求,客户端进行应答,并向下进行转发,服务器一般启动在管理设备上,客户机在下挂设备上启动,1550E只支持客户端。</p>
+<p>[H3C]habp enable   启动HABP特性,缺省即启动,启动后即缺省为客户机模式</p>
+<p><H3C>debugging habp   启动HABP调试功能</p>
+<p> NTDP即邻居拓扑发现协议,用来收集网络拓扑信息的协议,与NDP协议一起工作,用于集群管理,S1550E的配置主要包括开启与关闭功能能,开启与关闭调试功能</p>
+<p>[H3C]ntdp enable   缺省情况下为开启的</p>
+<p>[H3C-Ethernet0&#x2F;3]ntdp enable   缺省情况下为使能</p>
+<p><H3C>debugging ntdp</p>
+<p><em><strong>*十.SNMP配置:*</strong></em></p>
+<p> S1550E支持SNMPv1,SNMPv2c,主要配置包括:设置团体名,设置系统信息,设置Trap目标主机的地址,允许或禁止发送Trap,禁止SNMP Agent的运行</p>
+<p>[H3C]snmp-agent community read bigheap   设置bigheap团体,且为只读访问</p>
+<p>[H3C]snmp-agent max-size 1600   设置Agent能接受&#x2F;发送的SNMP消息包最大为1600字节,缺省1500</p>
+<p>[H3C]snmp-agent sys-info contact #27345 location Diqiu version v2c   设置系统信息,版本为v2c,缺省情况下联系信息为”R&amp;D Hangzhou, H3C Technologies co.,Ltd.”,位置为”Hangzhou China”,v2c版本</p>
+<p>[H3C]undo snmp-agent   禁止SNMP Agent的运行,若配置任何SNMP命令将重新启动SNMP Agent</p>
+<p>[H3C]display snmp-agent community read</p>
+<p>[H3C]display snmp-agent sys-info contact</p>
+<p>[H3C]display snmp-agent sys-info location</p>
+<p>[H3C]display snmp-agent sys-info version</p>
+<p><H3C>debugging snmp-agent packet|process</p>
+<p><em><strong>*十一.IGMP Snooping配置:*</strong></em></p>
+<p> IGMP Snooping是运行在二层交换机上的组播约束机制,用于管理和控制组播组.主要负责建立和维护二层MAC地址表,同时根据建立的组播地址表来转发路由器下发的组播报文,如果不运行IGMP Snooping,则组播报文将在二层网络中广播</p>
+<p> IGMP Snooping配置包括:启动和关闭IGMP Snooping,配置路由器端口老化时间,配置最大响应查询时间,配置组播组成员端口老化时间,配置端口快速离开,调试功能</p>
+<p>[H3C]igmp-snooping   启用IGMP Snooping功能,默认为关闭</p>
+<p>[H3C]igmp-snooping router-aging-time 500   配置路由器端口老化时间为500s,默认为105s</p>
+<p>[H3C]igmp-snooping max-response-time 15   配置最大响应查询时间为15s,默认为10s</p>
+<p>[H3C]igmp-snooping host-aging-time 300   配置组播组成员端口老化时间为300s,默认为260s</p>
+<p>[H3C-Ethernet0&#x2F;3]igmp-snooping fast-leave   配置快速离开,若收到离开报文,则立即删除端口,不询问</p>
+<p>[H3C]display igmp-snooping configuration   显示配置信息</p>
+<p>[H3C]display igmp-snooping statistics   显示包统计信息</p>
+<p>[H3C]display igmp-snooping group vlan 2   显示VLAN2中IP组播组和MAC组播组的信息</p>
+<p><H3C>reset igmp-snooping statistics   清楚统计信息</p>
+<p><H3C>debugging igmp-snooping</p>
+<p><em><strong>*十二.系统调试:*</strong></em></p>
+<p><H3C>debugging all   开启所有调试开关,此命令为协议调试开关</p>
+<p><H3C>terminal debugging   终端调试开关,打开开关,默认为关闭</p>
+<p><H3C>debugging drv   主要显示报文的实际内容,默认为关闭</p>
+<p>[H3C]display debugging   显示调试开关状态</p>
+<p><em><strong>*十三.802.1x配置:*</strong></em></p>
+<p>[H3C-Ethernet0&#x2F;3]dot1x   开启802.1x特性,也可在系统视图下使用,使用后全局开启,也可用         interface参数开启指定端口的802.1x特性,缺省全关闭,要启用802.1x,全局和端口的都需开启</p>
+<p>[H3C-Ethernet0&#x2F;3]dot1x port-control unauthorized-force   设置工作模式为强制非授权模式,使用    模式与dot1x命令相同,默认为auto,即通过了认证才可以访问,还有authorized-force,为强制授权    模式,允许用户访问</p>
+<p>[H3C-Ethernet0&#x2F;3]dot1x port-method portbased   设置接入控制方式为基于端口的,使用模式与      dot1x命令相同,默认为macbase,基于MAC地址的</p>
+<p>[H3C-Ethernet0&#x2F;3]dot1x max-user 10   设置端口接入用户的数量最大为10个,使用模式与dot1x命令     相同,默认为128,取值范围为1-128</p>
+<p>[H3C]dot1x authentication-method eap   设置802.1x的用户认证方法为EAP,即EAP中继,直接用EAP报    文发送到服务器,需服务器支持</p>
+<p>[H3C-Ethernet0&#x2F;3]dot1x re-authenticate   开启802.1x重认证功能使交换机以一定时间间隔周期性    的进行认证,使用模式同dot1x命令,缺省情况下所有端口该特性都关闭</p>
+<p>[H3C]dot1x timer handshake-period 20 reauth-period 7200 quiet-period 30 tx-period 20 supp-   timeout 20 server-timeout 200   设置802.1x认证的定时器,handshake-period为认证成功后,   系统以此间隔为周期发送握手请求报文(相当于keepalive消息发送间隔),1-1024s,默认15s.</p>
+<p>   reauth-period为重认证超时定时器,1-86400s,默认3600s.</p>
+<p>   quiet-period为用户认证失败后,Autheticator的静默定时器,静默后再处理认证,10-120s,默认60s.</p>
+<p>   tx-period为传送超时定时器,Supplicant未成功发送认证应答报文,则重发认证请求,10-120s,默认  为30s.</p>
+<p>   supp-timeout为认证超时定时器,Supplicant未成功响应,则重发认证请求,10-120s,默认30s.</p>
+<p>   server-timeout为服务器未成功响应的超时定时器,100-300s,默认100s.</p>
+<p><H3C>reset dot1x statistics   清除802.1x统计信息</p>
+<p>[H3C]display dot1x statistics   显示802.1x的配置,运行情况和统计信息</p>
+<p><H3C>debugging dot1x   打开802.1x的相关模块的调试信息</p>
+<p><em><strong>*十四.RADIUS配置:*</strong></em></p>
+<p>[H3C]radius scheme system   进入system方案,其各项值为缺省值,1550E只支持默认方案</p>
+<p>[H3C-radius-system]primary authentication 10.110.1.1 1812   设置RADIUS服务器地址和UDP端口   号,默认情况下,system方案中服务器IP地址为空,UDP端口号为1812</p>
+<p>[H3C-radius-system]key authentication 123   指示RADIUS加密共享密钥为123,默认无共享密钥</p>
+<p>[H3C-radius-system]timer 10   设置RADIUS服务器响应超时定时器,1-10s,默认为5s</p>
+<p>[H3C-radius-system]retry 10   设置RADIUS服务器最大响应重试次数为10,1-20次,默认为5次</p>
+<p>[H3C]display radius   显示radius方案信息</p>
+<p><H3C>debugging radius packet   打开radius报文调试开关</p>
+<p>对于一般的路由器广大网友们应该都会设置，随着光纤的普及，越来越多的宽带提供商都采用光纤到户，想要使用光纤就必须使用光纤路由器，光纤路由器的设置很多人还不太了解。下面，我以H3C光纤路由器为例，给大家介绍如何进行设置。</p>
+<p>一、连接方式</p>
+<p>光纤－光电转换器—代理服务器—电脑。</p>
+<p>1、ADSL&#x2F;VDSLPPPoE：电脑上运行第三方拨号软件如Enternet300或WinXP系统自带的拨号程序，填入ISP提供的账号和密码，每次上网前先要拨号。</p>
+<p>2、启用路由功能，填入了ISP提供的账号和密码，拨号的动作交给MODEM去做。</p>
+<p>3、静态IP：ISP提供给您固定的IP地址、子网掩码、默认网关、DNS。</p>
+<p>4、动态IP：电脑的TCP&#x2F;IP属性设置为“自动获取IP地址”，每次启动电脑即可上网。</p>
+<p>5、802.1X+静态IP：ISP提供固定的IP地址，专用拨号软件，账号和密码。</p>
+<p>6、802.1X+动态IP：ISP提供专用拨号软件，账号和密码。</p>
+<p>7、WEB认证：每次上网之前，打开IE浏览器，会自动跳到ISP指定的主页，填入ISP提供的用户名密码，通过认证以后才可以进行其他得上网操作。</p>
+<p>二、基本设置</p>
+<p>1、物理连接好，这里就不啰嗦了，大同小异，将电脑的ip地址和路由器管理地址设置在同一网段，在IE栏中输入管理IP地址，在用户登陆提示窗口输入宽带路由器说明书中的默认管理账户和密码进入设置界面。</p>
+<p>2、为了让路由器能够自动拨号，我们还需要将ADSL账号填写在路由器中，点击上方的首页标签，然后点击WAN，在PPPoverEthernet处看到设置ADSL账号的地方，输入自己的ADSL账号和密码后保存设置，现在到系统状态－系统信息处察看联网状态，在WAN端可以清晰地看到ADSL拨号获得的网络信息。</p>
+<p>3、设置完ADSL账号后，我们就可以通过宽带路由器上网了，这时我们可以打开DHCP功能，在DHCP服务器可进入的ip范围处设置ip地址范围，保存后光纤路由器设置中就具备自动分配ip地址的功能了。</p>
+<p>光纤路由器设置的内容就为你介绍这里，上面提到的这些连接认证方式只是普及率比较高的一些宽带接入方式，如果你不清楚，可以向ISP商咨询，设置好自己的光纤路由器。</p>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/04/29/test/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" #.">
+                    Unclassified
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/04/29/test/" class="trm-anima-link">
+                    test
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/04/29</li>
+                <li>18:10</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.5
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+            
+<div class="trm-fixed-container">
+    
+    
+        <div class="trm-fixed-btn" data-title="Read Mode" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="Back To Top">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.5"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>
